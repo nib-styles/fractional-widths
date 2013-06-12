@@ -1,0 +1,9 @@
+@mixin FractionalWidths($fractions, $prefix: "u-") {
+  @each $fraction in $fractions {
+    @for $i from 1 through $fraction {
+      .#{$prefix}#{$i}of#{$fraction} {
+        width: percentage($i / $fraction);
+      }
+    }
+  }
+}
